@@ -9,7 +9,8 @@ import { IniciComponent } from './components/inici/inici.component';
 import { QuiSomComponent } from './components/qui-som/qui-som.component';
 import { ContacteComponent } from './components/contacte/contacte.component';
 import { CompanyiaComponent } from './components/companyia/companyia.component';
-import { TrabomComponent } from './components/trabom/trabom.component';
+import { TrabomComponent } from './components/trobam/trabom.component';
+import { Error404Component } from './components/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TrabomComponent } from './components/trabom/trabom.component';
     QuiSomComponent,
     ContacteComponent,
     CompanyiaComponent,
-    TrabomComponent
+    TrabomComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
