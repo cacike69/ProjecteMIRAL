@@ -6,6 +6,8 @@ import { Error404Component } from './components/error404/error404.component';
 import { IniciComponent } from './components/inici/inici.component';
 import { QuiSomComponent } from './components/qui-som/qui-som.component';
 import { TrabomComponent } from './components/trobam/trabom.component';
+import { LoginComponent } from './components/login/login.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'inici' },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'quisom', component: QuiSomComponent},
   { path: 'contacte', component: ContacteComponent},
   { path: 'companyia', component: CompanyiaComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'singin', component: SigninComponent},
   { path: '**', component: Error404Component }
 ];
 

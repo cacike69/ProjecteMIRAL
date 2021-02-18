@@ -11,6 +11,8 @@ import { ContacteComponent } from './components/contacte/contacte.component';
 import { CompanyiaComponent } from './components/companyia/companyia.component';
 import { TrabomComponent } from './components/trobam/trabom.component';
 import { Error404Component } from './components/error404/error404.component';
+import { LoginComponent } from './components/login/login.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { Error404Component } from './components/error404/error404.component';
     ContacteComponent,
     CompanyiaComponent,
     TrabomComponent,
-    Error404Component
+    Error404Component,
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
