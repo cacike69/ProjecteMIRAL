@@ -11,8 +11,9 @@ import { ContacteComponent } from './components/contacte/contacte.component';
 import { CompanyiaComponent } from './components/companyia/companyia.component';
 import { TrabomComponent } from './components/trobam/trabom.component';
 import { Error404Component } from './components/error404/error404.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/ingres/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { IngresComponent } from './components/ingres/ingres.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SigninComponent } from './components/signin/signin.component';
     TrabomComponent,
     Error404Component,
     LoginComponent,
-    SigninComponent
+    SigninComponent,
+    IngresComponent
   ],
   imports: [
     BrowserModule,
