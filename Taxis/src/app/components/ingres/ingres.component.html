@@ -9,18 +9,18 @@
 
       <!-- Formulario de Log In -->
 
-      <form class="container">
+      <form class="container" [formGroup]="user" (ngSubmit)="enviarDatos()">
 
         <div class="form-group">
 
-          <input type="text" class="form-control" placeholder="Nickname">
+          <input type="email" class="form-control" placeholder="Correo" formControlName="correo" name="correo" #vcorreo [ngClass]="{'is-invalid':submitted && validacion.correo.errors}">
 
-            <!-- Validar Nickname
-            <div *ngIf = "submitted && validacion.nickname.errors" class="invalid-feedback mensaje-error">
+            <!-- Validar Correo -->
+            <div *ngIf = "submitted && validacion.correo.errors" class="invalid-feedback mensaje-error">
 
-              <p *ngIf = "validacion.nickname.errors.required">Este campo es obligatorio</p>
+              <p *ngIf = "validacion.correo.errors.required">Este campo es obligatorio</p>
 
-            </div> -->
+            </div>
 
         </div>
 
