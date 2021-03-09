@@ -1,20 +1,68 @@
 <div class="container">
-  <form id="signup">
+  <form [formGroup]="registro" method="POST" id="signup">
+
     <div class="header">
-      <h3>Registro</h3>
+      <h3>Registre</h3>
     </div>
     <div class="sep"></div>
     <div class="inputs">
-      <input type="text" placeholder="Nom" autofocus />
-      <input type="text" placeholder="Cognoms"  />
-      <input type="number" placeholder="Telèfon Movil" autofocus />
-      <input type="email" placeholder="Correu Electronic" />
-      <input type="password" placeholder="Contraseña" />
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        placeholder="Nom"
+        autofocus
+      />
+      <input
+        type="text"
+        class="form-control"
+        formControlName="lname"
+        placeholder="Cognoms"
+      />
+      <input
+        type="number"
+        class="form-control"
+        formControlName="telefon"
+        placeholder="Telèfon Movil"
+        autofocus
+      />
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        placeholder="Correu Electronic"
+      />
+      <input
+        type="password"
+        class="form-control"
+        formControlName="pass"
+        placeholder="Contraseña"
+      />
+      <input
+        type="password"
+        class="form-control"
+        formControlName="rpass"
+        placeholder="Repeteix la Contraseña"
+      />
       <div class="checkboxy">
-        <input name="cecky" id="checky" value="1" type="checkbox" /><label class="terms">Accepto el terminis i les condicions</label>
+        <input name="cecky" id="checky" value="1" type="checkbox" /><label
+          class="terms"
+          >Accepto el terminis i les condicions</label
+        >
       </div>
-      <div class="box">
-        <a href="#" class="btn btn-white btn-animation-1">Registra'm</a>
+
+      <div class="buttons">
+        <div class="containerbtn">
+          <button
+            type="button"
+            (click)="registrarUsuari()"
+            class="btn effect04"
+            data-sm-link-text="Registra'm"
+            target="_blank"
+          >
+            <span>Registra'm</span>
+          </button>
+        </div>
       </div>
     </div>
   </form>

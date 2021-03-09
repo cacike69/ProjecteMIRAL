@@ -13,6 +13,7 @@ import { TrabomComponent } from './components/trobam/trabom.component';
 import { Error404Component } from './components/error404/error404.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { IngresComponent } from './components/ingres/ingres.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { IngresComponent } from './components/ingres/ingres.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
