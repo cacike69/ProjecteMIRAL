@@ -8,21 +8,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class IngresComponent implements OnInit {
 
-  verpasswd: boolean = false;
-  user: FormGroup;
-  submitted = false;
-
-  constructor(private formBuilder: FormBuilder) { }
-
   ngOnInit(): void {
+  }
+
+  user: FormGroup;
+  verpasswd: boolean = false;
+
+  constructor(private formBuilder: FormBuilder) {
 
     this.user = this.formBuilder.group({
 
-      nickname: ['', Validators.required]
+      correo: ['', Validators.required]
 
     });
-    
+  
   }
+  
+  submitted = false;
 
   get validacion(){
 
