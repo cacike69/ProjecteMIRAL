@@ -7,5 +7,6 @@
     $con=mysqli_connect("oracle.ilerna.com","DAW2_MIRAL","sector1g","daw2_miral");
 
     return $con;
+    
   }
 ?>
