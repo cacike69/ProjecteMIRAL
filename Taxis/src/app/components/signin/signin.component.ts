@@ -17,7 +17,9 @@ export class SigninComponent implements OnInit {
 
   validation_messages={
     name:[
-      {type:'required', message:'Este campo es obligatorio'}
+      {type:'required', message:'Este campo es obligatorio'},
+      {type:'minLength', message:'Mínim introduir 4 caracters'},
+      {type:'maxLength', message:'Màxim introduir 15 caracters'}
     ],
     lname:[
       {type:'required', message:'Este campo es obligatorio'}

@@ -10,6 +10,7 @@
 
     <div class="inputs">
       <div class="form-group">
+        
         <!-- INPUT NOM USUARI -->
         <input
         name="nom"
@@ -20,7 +21,7 @@
         required/>
 
         <!-- MISSATGE ERROR NOM -->
-        <div *ngIf="!formRegistro.controls.fname.valid && formRegistro.dirty">
+        <!-- <div *ngIf="!formRegistro.controls.fname.valid && formRegistro.dirty">
           <div class="validation-errors">
             <ng-container *ngFor="let validation of validation_messages.name">
               <div
@@ -33,7 +34,7 @@
               </div>
             </ng-container>
           </div>
-        </div>
+        </div> -->
 
         <!-- INPUT COGNOM USUARI -->
         <input
