@@ -1,9 +1,16 @@
 .all {
-    /* background-image: url(/assets/general/background.png); */
+    /* height: 100%;
+    width: 100%; */
+    position: relative;
+    transform: translatey(115%);
+}
+
+.bg {
+    background-image: url(/assets/bg/bg-login.jpg);
     height: 100%;
     width: 100%;
-    position: relative;
-    transform: translateY(100%);
+    position: fixed;
+    top: 1 ;
 }
 
 .center {
@@ -21,4 +28,8 @@
 
 .cuenta-creada {
 	float:right;
+}
+
+.mensaje-error {
+    text-align: right !important;
 }
