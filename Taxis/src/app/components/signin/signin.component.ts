@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormsModule, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {  RxwebValidators } from '@rxweb/reactive-form-validators';
 
@@ -10,35 +10,12 @@ import {  RxwebValidators } from '@rxweb/reactive-form-validators';
 })
 export class SigninComponent implements OnInit {
 
+  formRegistro!: FormGroup;
+  submitted = false;
+
+  constructor(private readonly fb: FormBuilder, private router: Router) {}
+
   ngOnInit(): void {
-  }
-
-  formRegistro: FormGroup;
-
-  validation_messages={
-    name:[
-      {type:'required', message:'Este campo es obligatorio'},
-      {type:'minLength', message:'Mínim introduir 4 caracters'},
-      {type:'maxLength', message:'Màxim introduir 15 caracters'}
-    ],
-    lname:[
-      {type:'required', message:'Este campo es obligatorio'}
-    ],
-    telefon:[
-      {type:'required', message:'Este campo es obligatorio'}
-    ],
-    email:[
-      {type:'required', message:'Este campo es obligatorio'}
-    ],
-    pass:[
-      {type:'required', message:'Este campo es obligatorio'}
-    ],
-    rpass:[
-      {type:'required', message:'Este campo es obligatorio'}
-    ]
-  }
-
-  constructor(private readonly fb: FormBuilder, private router: Router) {
     this.formRegistro = this.fb.group({
       name: new FormControl('', [
         Validators.required,
@@ -68,10 +45,20 @@ export class SigninComponent implements OnInit {
     })
   }
 
-
+  get f(){
+    return this.formRegistro.controls;
+  }
 
   registrarUsuari(){
     console.log("Hola");
+    this.submitted = true;
+
+    if(this.formRegistro.invalid){
+
+      return;
+
+    }
+    // console.log(this.formRegistro.get('name'));
   }
 
 }
