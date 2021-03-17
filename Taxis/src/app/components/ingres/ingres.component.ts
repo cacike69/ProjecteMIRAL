@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-ingres',
@@ -7,12 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IngresComponent implements OnInit {
 
+  ngOnInit(): void {
+  }
+
+  user: FormGroup;
   verpasswd: boolean = false;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) {
 
-  ngOnInit(): void {
-    
+    this.user = this.formBuilder.group({
+
+      correo: ['', Validators.required]
+
+    });
+
+  }
+
+  submitted = false;
+
+  get validacion(){
+
+    return this.user.controls;
+
   }
 
   habilitarpasswd(): void {
@@ -28,6 +45,18 @@ export class IngresComponent implements OnInit {
 
       this.verpasswd = true;
       campo.type = "text";
+
+    }
+
+  }
+
+  enviarDatos(): void {
+
+    this.submitted = true;
+
+    if(this.user.invalid){
+
+      return;
 
     }
 
