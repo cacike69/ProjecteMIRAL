@@ -25,7 +25,7 @@ export class SigninComponent implements OnInit {
       lname: new FormControl('', [
         Validators.required,
         Validators.minLength(4),
-        Validators.maxLength(15),
+        Validators.maxLength(25),
       ]),
       telefon: new FormControl('', [
         Validators.required,
@@ -54,11 +54,8 @@ export class SigninComponent implements OnInit {
     this.submitted = true;
 
     if(this.formRegistro.invalid){
-
       return;
-
     }
-    // console.log(this.formRegistro.get('name'));
   }
 
 }
