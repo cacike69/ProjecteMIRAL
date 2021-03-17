@@ -21,9 +21,9 @@ export class IngresComponent implements OnInit {
       correo: ['', Validators.required]
 
     });
-  
+
   }
-  
+
   submitted = false;
 
   get validacion(){
@@ -59,7 +59,7 @@ export class IngresComponent implements OnInit {
       return;
 
     }
-  
+
   }
 
 }
