@@ -267,6 +267,7 @@ input:-moz-placeholder {
 
 .msg{
   width: 92.5%;
+  text-align: right;
   color: red;
   font-size: 13px;
   padding-top: 2px;

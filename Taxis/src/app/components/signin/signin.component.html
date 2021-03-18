@@ -48,15 +48,18 @@
           <input type="number" name="telefon" class="form-control" formControlName="telefon" placeholder="Telèfon Movil" required />
 
           <!-- MISSATGE ERROR TELEFON -->
-          <div *ngIf = "submitted && f.lname.errors">
-            <p *ngIf = "f.lname.errors.required" class="msg">
+          <div *ngIf = "submitted && f.telefon.errors">
+            <p *ngIf = "f.telefon.errors.required" class="msg">
               Aquest camp es obligatori
             </p>
-            <p *ngIf = "f.lname.errors.minlength" class="msg">
-              Minim introduïr 4 caracters!
+            <p *ngIf = "f.telefon.errors.pattern" class="msg">
+              Telefon Mobil introduït erroni!
             </p>
-            <p *ngIf = "f.lname.errors.maxlength" class="msg">
-              Màxim introduïr 15 caracters!
+            <p *ngIf = "f.telefon.errors.minlength" class="msg">
+              Minim introduïr 9 numeros!
+            </p>
+            <p *ngIf = "f.telefon.errors.maxlength" class="msg">
+              Màxim introduïr 9 numeros!
             </p>
           </div>
 
@@ -64,15 +67,12 @@
           <input type="email" name="email" class="form-control" formControlName="email" placeholder="Correu Electronic" required />
 
           <!-- MISSATGE ERROR CORREU ELECTRONIC -->
-          <div *ngIf = "submitted && f.lname.errors">
-            <p *ngIf = "f.lname.errors.required" class="msg">
+          <div *ngIf = "submitted && f.email.errors">
+            <p *ngIf = "f.email.errors.required" class="msg">
               Aquest camp es obligatori
             </p>
-            <p *ngIf = "f.lname.errors.minlength" class="msg">
-              Minim introduïr 4 caracters!
-            </p>
-            <p *ngIf = "f.lname.errors.maxlength" class="msg">
-              Màxim introduïr 15 caracters!
+            <p *ngIf = "f.email.errors.email" class="msg">
+              Introdueix un correu valid!
             </p>
           </div>
 
@@ -81,15 +81,15 @@
             required />
 
           <!-- MISSATGE ERROR CONTRASENYA -->
-          <div *ngIf = "submitted && f.lname.errors">
-            <p *ngIf = "f.lname.errors.required" class="msg">
+          <div *ngIf = "submitted && f.pass.errors">
+            <p *ngIf = "f.pass.errors.required" class="msg">
               Aquest camp es obligatori
             </p>
-            <p *ngIf = "f.lname.errors.minlength" class="msg">
-              Minim introduïr 4 caracters!
+            <p *ngIf = "f.pass.errors.minlength" class="msg">
+              Minim introduïr 5 caracters!
             </p>
-            <p *ngIf = "f.lname.errors.maxlength" class="msg">
-              Màxim introduïr 15 caracters!
+            <p *ngIf = "f.pass.errors.maxlength" class="msg">
+              Màxim introduïr 20 caracters!
             </p>
           </div>
 
@@ -97,21 +97,18 @@
           <input type="password" name="rpass" class="form-control" formControlName="rpass" placeholder="Confirmar la Contraseña" required />
 
           <!-- MISSATGE ERROR REPETIR CONTRASENYA -->
-          <div *ngIf = "submitted && f.lname.errors">
-            <p *ngIf = "f.lname.errors.required" class="msg">
+          <div *ngIf = "submitted && f.rpass.errors">
+            <p *ngIf = "f.rpass.errors.required" class="msg">
               Aquest camp es obligatori
             </p>
-            <p *ngIf = "f.lname.errors.minlength" class="msg">
-              Minim introduïr 4 caracters!
-            </p>
-            <p *ngIf = "f.lname.errors.maxlength" class="msg">
-              Màxim introduïr 15 caracters!
+            <p *ngIf = "f.rpass.errors.compare" class="msg">
+              Les contrasenyes no coincideixen!
             </p>
           </div>
 
 
           <div class="checkboxy">
-            <input name="cecky" id="checky" value="1" type="checkbox" />
+            <input name="cecky" id="checky" type="checkbox" required/>
             <label class="terms">
               Accepto el terminis i les condicions
             </label>
