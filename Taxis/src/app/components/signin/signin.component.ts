@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
-import { UsuarioService } from 'src/app/services/usuario.service';
 import { Usuario } from 'src/app/models/usuario.model';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-signin',
@@ -11,7 +11,7 @@ import { Usuario } from 'src/app/models/usuario.model';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  usuario: Usuario;
+  usuario: Usuario | undefined;
   formRegistro: FormGroup;
   submitted = false;
 
