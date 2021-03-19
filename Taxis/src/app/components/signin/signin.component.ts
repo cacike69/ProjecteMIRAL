@@ -11,11 +11,15 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  usuario: Usuario | undefined;
+
+  usuario: Usuario;
   formRegistro: FormGroup;
-  submitted = false;
+  submitted: boolean = false;
 
   constructor(private usuarioService: UsuarioService, private readonly fb: FormBuilder, private router: Router) {
+
+    this.usuario = new Usuario('', '', 0, '', '');
+
     this.formRegistro = this.fb.group({
       name: new FormControl('', [
         Validators.required,

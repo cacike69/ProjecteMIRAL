@@ -10,14 +10,6 @@
   session_start();
   $con = retornarConexion();
 
-  //  Comprovacion Conexion BBDD
-  // if (!$con) {
-  //   die("No se ha podido realizar la corrección ERROR:" . mysqli_connect_error() . "<br>");
-  // }else {
-  //   mysqli_set_charset ($con, "utf8");
-  //   echo "Se ha conectado a la base de datos" . "<br>";
-  // }
-
   class Result{}
   $response = new Result();
 
