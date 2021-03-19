@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import {  RxwebValidators } from '@rxweb/reactive-form-validators';
+import { RxwebValidators } from '@rxweb/reactive-form-validators';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { Usuario } from 'src/models/usuario.model';
+import { Usuario } from 'src/app/models/usuario.model';
 
 @Component({
   selector: 'app-signin',
@@ -11,16 +11,11 @@ import { Usuario } from 'src/models/usuario.model';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-
-  usuario!: Usuario;
-  formRegistro!: FormGroup;
+  usuario: Usuario;
+  formRegistro: FormGroup;
   submitted = false;
-  minLengthTLF: number = 9;
-  maxLengthTLF: number = 9;
 
-  constructor(private usuarioService: UsuarioService, private readonly fb: FormBuilder, private router: Router) {}
-
-  ngOnInit(): void {
+  constructor(private usuarioService: UsuarioService, private readonly fb: FormBuilder, private router: Router) {
     this.formRegistro = this.fb.group({
       name: new FormControl('', [
         Validators.required,
@@ -50,9 +45,9 @@ export class SigninComponent implements OnInit {
     })
   }
 
-  get f(){
-    return this.formRegistro.controls;
-  }
+  ngOnInit(): void {}
+
+  get f(){return this.formRegistro.controls;}
 
   registrarUsuari(){
     console.log("Hola");

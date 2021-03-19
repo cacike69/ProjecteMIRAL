@@ -1,4 +1,4 @@
-export class name {
+export class Usuario {
 
   constructor(
 

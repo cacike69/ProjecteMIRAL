@@ -9,7 +9,7 @@
   require("db.php");
   session_start();
   $con = retornarConexion();
-  
+
   //  Comprovacion Conexion BBDD
   // if (!$con) {
   //   die("No se ha podido realizar la corrección ERROR:" . mysqli_connect_error() . "<br>");
@@ -21,14 +21,30 @@
   class Result{}
   $response = new Result();
 
-  $instruccion = "select count(*) as 'rows' from usuaris where nom = '$params->name'";
-  $res = mysqli_query($con,$instruccion);
+  $instruccion = "select count(*) as 'rows' from usuaris where correu = '$params->correu'";
+  $res = mysqli_query($con, $instruccion);
   $datos = mysqli_fetch_assoc($res);
 
   if ($datos['rows'] == 0) {
-    // Insertem a la BBDD
 
+    // Insertem a la BBDD
+    mysqli_query(
+      $con, "insert into usuaris (nom,cognom,telefon,correu,contrasenya)
+      values ('$params->nom','$params->cognom','$params->telefon','$params->correu','$params->pass')"
+    );
+
+    // GENERA LOS DATOS DE RESPUESTA
+    $response->resultado = 'OK';
+    $response->mensaje = 'Usuari Registrat, Enhorabona!';
+
+  }elseif ($datos['rows'] != 0) {
+
+    $response->resultado = 'KO';
+    $response->mensaje = 'Aquest correu electronic ja esta registrat';
 
   }
+
+  header('Content-Type: aplication/json');
+  echo json_encode($response);
 
 ?>

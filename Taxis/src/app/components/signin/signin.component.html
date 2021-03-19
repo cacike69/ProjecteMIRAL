@@ -1,6 +1,6 @@
 <div class="bc-reg mb-5">
   <div class="container mb-5">
-    <form [formGroup]="formRegistro" method="POST" id="signup">
+    <form [formGroup]="formRegistro" (ngSubmit)= "registrarUsuari()" method="POST" id="signup">
 
       <!-- TITOL REGISTRE -->
       <div class="header">
@@ -116,8 +116,7 @@
 
           <div class="buttons">
             <div class="containerbtn">
-              <button type="button" class="btn effect04" data-sm-link-text="Registra'm" target="_blank"
-                (click)="registrarUsuari()">
+              <button type="submit" class="btn effect04" data-sm-link-text="Registra'm" target="_blank">
                 <span>Registra'm</span>
               </button>
             </div>
