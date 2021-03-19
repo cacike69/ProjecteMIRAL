@@ -9,6 +9,7 @@
   require("db.php");
   session_start();
   $con = retornarConexion();
+  
   //  Comprovacion Conexion BBDD
   // if (!$con) {
   //   die("No se ha podido realizar la corrección ERROR:" . mysqli_connect_error() . "<br>");
@@ -26,7 +27,7 @@
 
   if ($datos['rows'] == 0) {
     // Insertem a la BBDD
-    
+
 
   }
 
