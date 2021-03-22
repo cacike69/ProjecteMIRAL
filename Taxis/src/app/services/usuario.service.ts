@@ -13,7 +13,7 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   registrarUsuari(registre: any){
-    return this.http.post(`${api}server/registroAlumno.php`, JSON.stringify(registre));
+    return this.http.post(`${api}server/registreUsuari.php`, JSON.stringify(registre));
   }
-  
+
 }
